@@ -1,0 +1,82 @@
+autostart = False
+version = 0.8.2-BETA2
+[127.0.0.1:7200]
+    workingdir = /tmp
+    udp = 10000
+    [[3640]]
+        image = /Users/Nick/GNS3/Images/C3640-IK.BIN
+        idlepc = 0x604fdb90
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R4]]
+        model = 3640
+        console = 2004
+        aux = 2504
+        cnfg = configs/R4.cfg
+        slot0 = NM-1FE-TX
+        f0/0 = R1 f0/0
+        slot1 = NM-4T
+        s1/2 = R3 s1/2
+        slot2 = NM-1FE-TX
+        x = -39.0
+        y = 15.0
+        z = 1.0
+    [[ROUTER R1]]
+        model = 3640
+        console = 2001
+        aux = 2501
+        cnfg = configs/R1.cfg
+        slot0 = NM-1FE-TX
+        f0/0 = R4 f0/0
+        slot1 = NM-4T
+        s1/0 = R2 s1/0
+        slot2 = NM-1FE-TX
+        x = -193.0
+        y = -83.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3640
+        console = 2002
+        aux = 2502
+        cnfg = configs/R2.cfg
+        slot0 = NM-1FE-TX
+        slot1 = NM-4T
+        s1/0 = R1 s1/0
+        s1/1 = R3 s1/1
+        slot2 = NM-1FE-TX
+        x = -40.0
+        y = -159.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3640
+        console = 2003
+        aux = 2503
+        cnfg = configs/R3.cfg
+        slot0 = NM-1FE-TX
+        slot1 = NM-4T
+        s1/1 = R2 s1/1
+        s1/2 = R4 s1/2
+        slot2 = NM-1FE-TX
+        x = 119.0
+        y = -78.0
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    [[NOTE 1]]
+        text = EBGP AS3
+        x = 137.0
+        y = 4.0
+        z = 2.0
+    [[NOTE 2]]
+        text = IBGP AS124
+        x = -148.0
+        y = 17.0
+        z = 2.0
+    [[SHAPE 1]]
+        type = ellipse
+        x = -234.0
+        y = -199.0
+        width = 319.0
+        height = 279.0
+        border_style = 2
