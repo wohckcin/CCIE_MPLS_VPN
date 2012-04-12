@@ -18,8 +18,8 @@ version = 0.8.2-BETA2
         slot1 = NM-4T
         s1/0 = R2 s1/0
         slot2 = NM-1FE-TX
-        x = -184.0
-        y = -103.0
+        x = -194.0
+        y = -83.0
         z = 1.0
     [[ROUTER R2]]
         model = 3640
@@ -29,45 +29,46 @@ version = 0.8.2-BETA2
         slot0 = NM-1FE-TX
         slot1 = NM-4T
         s1/0 = R1 s1/0
+        s1/1 = R3 s1/1
         slot2 = NM-1FE-TX
-        x = 50.0
-        y = -101.0
+        x = -48.0
+        y = -146.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3640
+        console = 2003
+        aux = 2503
+        cnfg = configs/R3.cfg
+        slot0 = NM-1FE-TX
+        slot1 = NM-4T
+        s1/1 = R2 s1/1
+        slot2 = NM-1FE-TX
+        x = 98.0
+        y = -82.0
         z = 1.0
 [GNS3-DATA]
     configs = configs
-    m11 = 1.25266443862
-    m22 = 1.25266443862
     [[NOTE 1]]
-        text = R1\nrouter bgp 1\n  neighbor 170.1.12.2 advertise-map 1 non-exist-map 2\n\nclear:\nrouter bgp 1\n  no neighbor 170.1.12.2 remote-as 1\n  no neighbor 170.1.12.2 advertise-map 1 non-exist-map 2\n\nnow build again
-        x = -178.0
-        y = 31.0
+        text = s1/1
+        x = -5.25785993023
+        y = 10.3236926403
+        interface = R3 s1/1
         z = 2.0
     [[NOTE 2]]
-        text = IBGP AS1 Serial
-        x = -86.0
-        y = -34.0
+        text = s1/1
+        x = 71.2578599302
+        y = 33.6763073597
+        interface = R2 s1/1
         z = 2.0
     [[NOTE 3]]
-        text = If R2 network 2.2.2.0 exist, R1 none-state network 1.1.1.0
-        x = -180.0
-        y = -167.0
+        text = s1/0
+        x = -1.62230698424
+        y = 42.0323702814
+        interface = R2 s1/0
         z = 2.0
     [[NOTE 4]]
         text = s1/0
-        x = -6.8196656589
-        y = 25.7939724318
-        interface = R2 s1/0
-        z = 2.0
-    [[NOTE 5]]
-        text = s1/0
-        x = 72.8196656589
-        y = 18.2060275682
+        x = 67.6223069842
+        y = 1.96762971865
         interface = R1 s1/0
         z = 2.0
-    [[SHAPE 1]]
-        type = ellipse
-        x = -140.0
-        y = -109.0
-        width = 200.0
-        height = 128.0
-        border_style = 2
