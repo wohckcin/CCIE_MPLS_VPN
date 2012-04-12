@@ -1,0 +1,192 @@
+autostart = False
+version = 0.8.2-BETA2
+[127.0.0.1:7200]
+    workingdir = /tmp
+    udp = 10000
+    [[3640]]
+        image = /Users/Nick/GNS3/Images/C3640-IK.BIN
+        idlepc = 0x604fdb90
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R4]]
+        model = 3640
+        console = 2004
+        aux = 2504
+        cnfg = configs/R4.cfg
+        slot0 = NM-1FE-TX
+        slot1 = NM-4T
+        s1/2 = R3 s1/2
+        s1/3 = R5 s1/3
+        slot2 = NM-1FE-TX
+        x = 99.0
+        y = -90.0
+        z = 1.0
+    [[ROUTER R5]]
+        model = 3640
+        console = 2005
+        aux = 2505
+        cnfg = configs/R5.cfg
+        slot0 = NM-1FE-TX
+        slot1 = NM-4T
+        s1/3 = R4 s1/3
+        slot2 = NM-1FE-TX
+        x = 217.0
+        y = -89.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3640
+        console = 2003
+        aux = 2503
+        cnfg = configs/R3.cfg
+        slot0 = NM-1FE-TX
+        slot1 = NM-4T
+        s1/1 = R2 s1/1
+        s1/2 = R4 s1/2
+        slot2 = NM-1FE-TX
+        x = -12.0
+        y = -152.0
+        z = 1.0
+[127.0.0.1:7201]
+    workingdir = /tmp
+    udp = 10100
+    [[3640]]
+        image = /Users/Nick/GNS3/Images/C3640-IK.BIN
+        idlepc = 0x604fdb90
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R1]]
+        model = 3640
+        console = 2007
+        aux = 2507
+        cnfg = configs/R1.cfg
+        slot0 = NM-1FE-TX
+        slot1 = NM-4T
+        s1/0 = R2 s1/0
+        slot2 = NM-1FE-TX
+        x = -236.255292804
+        y = -88.9947613152
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3640
+        console = 2009
+        aux = 2509
+        cnfg = configs/R2.cfg
+        slot0 = NM-1FE-TX
+        slot1 = NM-4T
+        s1/0 = R1 s1/0
+        s1/1 = R3 s1/1
+        slot2 = NM-1FE-TX
+        x = -118.16283218
+        y = -98.0787967478
+        z = 1.0
+[GNS3-DATA]
+    configs = configs
+    m11 = 0.880665873596
+    m22 = 0.880665873596
+    [[NOTE 1]]
+        text = NB
+        x = -221.0
+        y = -29.0
+        z = 2.0
+    [[NOTE 2]]
+        text = BJ
+        x = 244.0
+        y = -25.0
+        z = 2.0
+    [[NOTE 3]]
+        text = 10.1.1.1/24
+        x = -236.0
+        y = -143.0
+        z = 2.0
+    [[NOTE 4]]
+        text = PE
+        x = -99.8233371428
+        y = -46.5747848183
+        z = 2.0
+    [[NOTE 5]]
+        text = P
+        x = 33.2033829691
+        y = -178.70617962
+        z = 2.0
+    [[NOTE 6]]
+        text = ISP
+        x = 14.0840354326
+        y = -12.0
+        z = 2.0
+    [[NOTE 7]]
+        text = PE
+        x = 120.397044889
+        y = -43.168271531
+        z = 2.0
+    [[NOTE 8]]
+        text = 10.5.5.5/24
+        x = 222.278202654
+        y = -150.114377619
+        z = 2.0
+    [[NOTE 9]]
+        text = CE
+        x = -222.278202654
+        y = -157.492907167
+        z = 2.0
+    [[NOTE 10]]
+        text = CE
+        x = 237.957577945
+        y = -132.590369941
+        z = 2.0
+    [[NOTE 11]]
+        text = s1/0
+        x = -5.96917603465
+        y = 31.0223787983
+        interface = R2 s1/0
+        z = 2.0
+    [[NOTE 12]]
+        text = s1/0
+        x = 71.9691760347
+        y = 12.9776212017
+        interface = R1 s1/0
+        z = 2.0
+    [[NOTE 13]]
+        text = s1/2
+        x = 70.3311007896
+        y = 36.3662421613
+        interface = R3 s1/2
+        z = 2.0
+    [[NOTE 14]]
+        text = s1/1
+        x = 0.445654954477
+        y = 45.2425174768
+        interface = R3 s1/1
+        z = 2.0
+    [[NOTE 15]]
+        text = s1/1
+        x = 65.5543450455
+        y = -1.24251747675
+        interface = R2 s1/1
+        z = 2.0
+    [[NOTE 16]]
+        text = s1/3
+        x = -6.59321364846
+        y = 27.690117133
+        interface = R5 s1/3
+        z = 2.0
+    [[NOTE 17]]
+        text = s1/3
+        x = 72.5932136485
+        y = 16.309882867
+        interface = R4 s1/3
+        z = 2.0
+    [[NOTE 18]]
+        text = s1/2
+        x = -4.33110078961
+        y = 7.63375783873
+        interface = R4 s1/2
+        z = 2.0
+    [[SHAPE 1]]
+        type = ellipse
+        x = -132.854018201
+        y = -160.794124014
+        width = 302.044178133
+        height = 200.0
+        border_style = 2
